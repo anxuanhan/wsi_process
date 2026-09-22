@@ -9,6 +9,32 @@ WSI Region Analyzer is a CONCH-based whole-slide image analysis tool. Its web in
 
 Supported formats are `.svs`, `.ndpi`, `.tif`, `.tiff`, and `.czi`.
 
+## Quick Start with Codex
+For users with limited experience in environment setup, the easiest way to install this project is with Codex. 
+### 1. Download the project
+```
+   git clone https://github.com/anxuanhan/wsi_process.git
+   cd wsi_process
+```
+### 2. Ask Codex to install it
+Open Codex in the wsi_process directory and use:
+
+```text
+Read README.md and follow its instructions to complete the environment checks and project installation.
+
+Create the wsi-process Conda environment with Python 3.10 and install all required packages using the versions specified in the README, including Conda OpenSlide and requirements.txt.
+
+Check the CONCH checkpoint. If it is missing, stop and tell me to download it manually from Hugging Face after accepting the license and authenticating my account.
+
+Verify all dependencies and CUDA availability. Do not change any model or processing parameters.
+
+After verification, start main.py and provide the local URL or the SSH tunnel command needed to access it.
+```
+
+
+## If you prefer to set up the environment and dependencies manually, follow the steps below.
+
+
 ## 1. Requirements
 
 - Linux
@@ -19,7 +45,8 @@ Supported formats are `.svs`, `.ndpi`, `.tif`, `.tiff`, and `.czi`.
 Enter the downloaded project directory:
 
 ```bash
-cd /path/to/wsi_process
+   git clone https://github.com/anxuanhan/wsi_process.git
+   cd wsi_process
 ```
 
 ## 2. Create the environment
@@ -166,22 +193,9 @@ On a node with limited resources, reduce `CZI_BATCH_SIZE`, `CZI_NUM_WORKERS`, an
 
 
 
-## 7. Install with Codex
 
-After downloading the project, open Codex in the project directory and provide this instruction:
 
-```text
-Read README.md and complete the environment checks and project installation.
-Create the wsi-process Conda environment with Python 3.10, install Conda OpenSlide
-and requirements.txt, check the CONCH checkpoint and reference patch, and verify the
-dependencies and CUDA. Do not change model or processing parameters. Stop and tell me
-if Hugging Face authorization or a token is required. After verification, start main.py
-and provide the local URL or the SSH tunnel command needed to access it.
-```
-
-Codex can create the environment, install dependencies, check files, run validation, and start the server. The user must personally accept the Hugging Face license and authenticate their account.
-
-## 8. Main files
+## 7. Main files
 
 ```text
 main.py                    Web server and job orchestration
